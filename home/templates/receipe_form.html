@@ -1,0 +1,55 @@
+{%extends "base.html"%}
+{%block start%}
+
+<div class="container">
+    <form class="mt-4 mb-4 col-6 mx-auto card p-3 shadow-lg bg-lightgrey" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{ form.as_p }}
+        <div class="form mb-4">
+
+
+            <h3>Receipe Name</h3>
+            <input name="receipe_name" required type="text" class="form-control" placeholder="Enter Receipe Name">
+        </div>
+        <div class="mb-4">
+            <h6>Receipe Description</h5>
+                <textarea name="receipe_description" required class="form-control"
+                    placeholder="Enter Receipe Description"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="formGroupExampleInput2" class="form-label">Receipe Image</label>
+            <input name="receipe_image" required type="file" class="form-control"
+                placeholder="Enter Receipe Description">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+    {{receipe_data}}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for rec in receipe_data %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{rec.receipe_name}}</td>
+                <td>{{rec.receipe_description}}</td>
+                <td>{{rec.receipe_image}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+{%endblock%}
