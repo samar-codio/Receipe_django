@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from .models import *
 
 # Create your views here.
@@ -21,4 +21,10 @@ def receipe_form(request):
     vals = receipe.objects.all()
     context = {'receipe_data': vals}
 
-    return render(request, 'receipe_form.html',context )
+    return render(request, 'receipe_form.html', context)
+
+
+def delete_receipe(request, id):
+    queryset = receipe.objects.get(id=id)
+    queryset.delete()
+    return redirect("/receipe/")

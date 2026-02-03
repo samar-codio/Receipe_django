@@ -23,7 +23,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('receipe/', receipe_form, name='receipe_form')
+    path('receipe/', receipe_form, name='receipe_form'),
+    path('delete_receipe/<id>/', delete_receipe, name='delete_receipe')
 ]
 
 if settings.DEBUG:

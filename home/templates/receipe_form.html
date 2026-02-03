@@ -25,8 +25,6 @@
 
 
     </form>
-    {{receipe_data}}
-
     <table class="table">
         <thead>
             <tr>
@@ -34,6 +32,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Image</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -43,7 +42,10 @@
                 <th scope="row">{{forloop.counter}}</th>
                 <td>{{rec.receipe_name}}</td>
                 <td>{{rec.receipe_description}}</td>
-                <td>{{rec.receipe_image}}</td>
+                <td><img src="/media/{{rec.receipe_image}}" style="height : 200px"></td>
+                <td>
+                    <a href="/delete_receipe/{{rec.id}}/" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
             {% endfor %}
 
