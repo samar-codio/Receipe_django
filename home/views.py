@@ -21,6 +21,10 @@ def receipe_form(request):
     vals = receipe.objects.all()
     context = {'receipe_data': vals}
 
+    if request.GET.get('search'):
+        queryset = vals.filter(
+            receipe_name__icontains=request.GET.get('search'))
+        context = {'receipe_data': queryset}
     return render(request, 'receipe_form.html', context)
 
 
@@ -28,3 +32,25 @@ def delete_receipe(request, id):
     queryset = receipe.objects.get(id=id)
     queryset.delete()
     return redirect("/receipe/")
+
+
+def update_receipe(request, id):
+    queryset = receipe.objects.get(id=id)
+    context = {'up_receipe': queryset}
+    if request.method == "POST":
+
+        data = request.POST
+
+        receipe_name = request.POST.get("receipe_name")
+        receipe_description = request.POST.get("receipe_description")
+        receipe_image = request.FILES.get("receipe_image")
+
+        queryset.receipe_name = receipe_name
+        queryset.receipe_description = receipe_description
+        if receipe_image:
+            queryset.receipe_image = receipe_image
+
+        queryset.save()
+        return redirect('/receipe/')
+
+    return render(request, "update_receipe.html", context)

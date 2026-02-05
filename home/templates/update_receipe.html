@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+{%block start%}
+
+<div class="container">
+    <form class="mt-4 mb-4 col-6 mx-auto card p-3 shadow-lg bg-lightgrey" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{ form.as_p }}
+        <div class="form mb-4">
+
+            <h3>Receipe Name</h3>
+            <input name="receipe_name" required type="text" value="{{up_receipe.receipe_name}}" class="form-control">
+        </div>
+        <div class="mb-4">
+            <h6>Receipe Description</h5>
+                <textarea name="receipe_description" required 
+                    class="form-control">{{up_receipe.receipe_description}}</textarea>
+        </div>
+        <div class="mb-4">
+            <label for="formGroupExampleInput2" class="form-label">Receipe Image</label>
+            <input name="receipe_image" type="file" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Receipe</button>
+        
+
+
+    </form>
+
+</div>
+
+
+{%endblock%}
