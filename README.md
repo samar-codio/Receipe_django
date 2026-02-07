@@ -1,77 +1,76 @@
-🍳 Recipe Sharing Platform
+# 🍳 Recipe Sharing Platform
 
-A full-stack Django web app to create, manage, and discover recipes. Built with clean MVC architecture and user authentication.
+![Python](https://img.shields.io/badge/Python-3.8+-blue) ![Django](https://img.shields.io/badge/Django-4.2-green) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)  
 
-✨ Features
+A full-stack Django web app to **create, manage, and discover recipes**. Built with a clean MVC architecture and secure user authentication.  
 
-User Authentication: Register, login, and manage sessions securely
+---
 
-Recipe Management: Create, update, delete, and view recipes with images
+## ✨ Features
 
-Search: Real-time, case-insensitive recipe search
+- 🔑 **User Authentication** – Register, login, and manage sessions securely  
+- 🍽️ **Recipe Management** – Create, update, delete, and view recipes with images  
+- 🔍 **Real-time Search** – Case-insensitive recipe search for quick access  
+- 👤 **User-Recipe Relation** – Each recipe is linked to its owner  
 
-User-Recipe Relation: Recipes are linked to their owners
+---
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-Backend: Django 4.2
+- **Backend:** Django 4.2  
+- **Database:** SQLite3  
+- **Frontend:** Bootstrap 5 (responsive design)  
+- **File Storage:** Django ImageField for recipe images  
 
-Database: SQLite3
+---
 
-Frontend: Bootstrap 5
+## 📂 Project Structure
 
-File Storage: Django ImageField for images
+- **vege/** – Project settings and configurations  
+- **home/** – Main app (models, views, templates)  
+- **media/** – Uploaded recipe images  
+- **public/** – Static files  
+- **manage.py** – Django management script  
 
-📂 Project Structure
+---
 
-vege/ – Project settings
+## 🚀 Getting Started
 
-home/ – Main app (models, views, templates)
+1. **Clone the repository** & navigate to the project  
+2. **Activate virtual environment**  
+3. **Install dependencies** (`django`, `pillow`)  
+4. **Run migrations**  
+5. **Start the development server**  
+6. **Open in browser:**  
+   - `register` → Create account  
+   - `receipe/` → Dashboard  
 
-media/ – Uploaded images
+---
 
-public/ – Static files
+## 🔐 Security
 
-manage.py – Django management script
+- CSRF protection on all forms  
+- Password-based authentication  
+- Server-side input validation  
+- Recipe ownership verification  
 
-🚀 Getting Started
+---
 
-Clone the repo & navigate to project
+## 🔮 Future Enhancements
 
-Activate virtual environment
+- ⭐ Recipe ratings & comments  
+- 🏷️ Categories & tags  
+- 🤝 Social features (likes, follows)  
+- 🔎 Advanced search filters (cooking time, difficulty)  
+- 📱 Mobile API integration  
+- 📧 Email notifications  
 
-Install dependencies (django, pillow)
+---
 
-Run migrations
+## 💡 Why This Project?
 
-Start the development server
+A simple, clean recipe platform designed for learning **full-stack Django development**. Perfect for practicing CRUD operations, authentication, and responsive UI.  
 
-Open in browser:
+---
 
-register → Create account
-
-receipe/ → Dashboard
-
-🔐 Security
-
-CSRF protection
-
-Password-based authentication
-
-Server-side input validation
-
-Recipe ownership verification
-
-🔮 Future Enhancements
-
-Recipe ratings & comments
-
-Categories & tags
-
-Social features (likes, follows)
-
-Advanced search filters
-
-Mobile API integration
-
-Email notifications
+**Built with Django** | **Portfolio-ready project** 🚀
